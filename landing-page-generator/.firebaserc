@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "landing-page-generator-54133": {
+      "hosting": {
+        "landing-page-generator": [
+          "landing-page-generator-54133"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "landing-page-generator-54133"
+  }
+}

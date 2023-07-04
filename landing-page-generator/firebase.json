@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "landing-page-generator",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
