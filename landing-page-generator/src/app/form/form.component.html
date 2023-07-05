@@ -1,0 +1,77 @@
+<div class="container">
+  <mat-card class="container__card">
+    <h1 class="title-of-the-form">Generate a web page</h1>
+    <form [formGroup]="form" class="container__form-group">
+      <!-- Title -->
+      <mat-form-field class="container__form-item container__title-input">
+        <mat-label>Enter title</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="title"
+          placeholder="Enter title"
+        />
+        <mat-error *ngIf="form.get('title')?.hasError('required')">
+          Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Content -->
+
+      <mat-form-field class="container__form-item container__content-input">
+        <mat-label>Add content</mat-label>
+        <textarea
+          matInput
+          formControlName="content"
+          placeholder="Add content"
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="5"
+          cdkAutosizeMaxRows="10"
+        >
+        </textarea>
+        <mat-error *ngIf="form.get('content')?.hasError('required')">
+          Content is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Enter picture link -->
+
+      <mat-form-field class="container__form-item container__link-input">
+        <mat-label>Add a link to a picture</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="pictureLink"
+          placeholder="Enter link"
+        />
+        <mat-error *ngIf="form.get('pictureLink')?.hasError('required')">
+          Picture link is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Enter picture link -->
+
+      <mat-form-field class="container__form-item container__link-input">
+        <mat-label>Add a link to a website</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="websiteLink"
+          placeholder="Enter link"
+        />
+        <mat-error *ngIf="form.get('websiteLink')?.hasError('required')">
+          Website link is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Submit button -->
+      <button
+        mat-flat-button
+        class="container__form-item container__submit-btn"
+        (click)="generateWebpage()"
+      >
+        Generate web page
+      </button>
+    </form>
+  </mat-card>
+</div>

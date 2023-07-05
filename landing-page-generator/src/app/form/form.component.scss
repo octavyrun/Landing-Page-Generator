@@ -1,0 +1,73 @@
+.title-of-the-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__card {
+    width: 37.5rem;
+    background-color: #e8e4c9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+
+  &__form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__title-input {
+    // todo
+  }
+
+  &__content-input {
+    // todo
+  }
+
+  &__link-input {
+    // todo
+  }
+
+  &__form-item {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  &__submit-btn {
+    border-radius: 4px;
+    font-family: "Roboto";
+    font-weight: 400;
+    background-color: #3eb925 !important;
+  }
+}
+
+// Material
+mat-label {
+  color: #000;
+  font-family: "Roboto";
+}
+
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #fff;
+}
+
+:host
+  ::ng-deep
+  .mdc-text-field:not(.mdc-text-field--disabled)
+  .mdc-text-field__input {
+  color: #000;
+}
+
+mat-input {
+  color: #000;
+}
