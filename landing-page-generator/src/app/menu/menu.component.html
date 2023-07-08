@@ -1,28 +1,35 @@
-<mat-drawer-container class="container">
-  <mat-drawer mode="side" [opened]="isDrawerOpen">
-    <!-- Drawer content goes here -->
-    <mat-list>
-      <a mat-list-item routerLink="/" routerLinkActive="active"
-        >Page generator</a
-      >
-    </mat-list>
+<mat-toolbar>
+  <button mat-icon-button (click)="toggleDrawer()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Landing Page Generator</span>
+</mat-toolbar>
 
-    <mat-list>
+<mat-sidenav-container class="container">
+  <mat-sidenav
+    [(opened)]="isDrawerOpen"
+    (closed)="isDrawerOpen = false"
+    mode="side"
+  >
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active">
+        Form generator
+      </a>
+
       <hr />
       <a
         mat-list-item
-        [routerLink]="'/landing-page/' + page.id"
-        class="pages-menu"
         *ngFor="let page of pages$ | async"
-        >{{ page.title }}</a
+        [routerLink]="'/landing-page/' + page.id"
+        routerLinkActive="active"
       >
-    </mat-list>
-  </mat-drawer>
-  <mat-drawer-content>
+        {{ page.title }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
     <!-- Content area goes here -->
-    <button mat-icon-button (click)="toggleDrawer()">
-      <mat-icon>{{ isDrawerOpen ? "chevron_left" : "chevron_right" }}</mat-icon>
-    </button>
     <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>

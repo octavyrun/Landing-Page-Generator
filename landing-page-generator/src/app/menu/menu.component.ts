@@ -16,7 +16,7 @@ import { Observable, Subject, takeUntil } from 'rxjs';
 })
 export class MenuComponent implements OnInit {
   public destroy$: Subject<boolean> = new Subject<boolean>();
-  isDrawerOpen = true;
+  isDrawerOpen = false;
   pages: pageDataProfile[] = [];
   pages$: Observable<pageDataProfile[]>;
   pagesCollection: CollectionReference;

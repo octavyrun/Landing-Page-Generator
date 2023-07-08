@@ -6,6 +6,7 @@
   font-family: "Roboto";
   color: #000;
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -13,7 +14,8 @@
   height: 100vh;
 
   &__card {
-    width: 37.5rem;
+    width: 100%;
+    max-width: 37.5rem;
     background-color: #e0e0e0;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -27,19 +29,9 @@
     flex-wrap: wrap;
   }
 
-  &__title-input {
-    // todo
-  }
-
-  &__content-input {
-    // todo
-  }
-
+  &__title-input,
+  &__content-input,
   &__link-input {
-    // todo
-  }
-
-  &__form-item {
     width: 100%;
     margin-bottom: 0.5rem;
   }
