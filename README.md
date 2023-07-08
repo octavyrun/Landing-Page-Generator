@@ -1,1 +1,1 @@
-(Landing Page Generator)[https://github.com/octavyrun/Landing-Page-Generator]
+(Landing Page Generator)[https://octavyrun.github.io/Landing-Page-Generator/]
