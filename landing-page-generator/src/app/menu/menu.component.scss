@@ -1,11 +1,9 @@
 .container {
-  height: calc(
-    100vh - 64px
-  ); /* Subtract the toolbar height from the container height */
+  height: calc(100vh - 64px);
 }
 
 mat-toolbar {
-  height: 64px; /* Set a fixed height for the toolbar */
+  height: 64px;
 }
 
 mat-sidenav {
@@ -14,16 +12,26 @@ mat-sidenav {
   color: #fff;
 
   mat-nav-list {
-    padding-top: 20px; /* Add some top padding for the menu items */
+    padding-top: 20px;
+
+    .created-page {
+      padding: 12px 24px;
+      transition: background-color 0.2s ease;
+    }
+
+    .created-page:hover {
+      background-color: rgb(26, 124, 180);
+      color: #fff;
+    }
   }
 
   a.mat-list-item {
-    padding: 12px 24px; /* Adjust the padding for the menu items */
+    padding: 12px 24px;
   }
 }
 
 @media (max-width: 600px) {
   mat-sidenav {
-    width: 200px; /* Decrease the width of the menu for smaller screens */
+    width: 10rem;
   }
 }
