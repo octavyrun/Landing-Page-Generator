@@ -11,9 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent],
+  declarations: [
+    AppComponent,
+    FormComponent,
+    LandingPageComponent,
+    MenuComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,28 @@
+<mat-drawer-container class="container">
+  <mat-drawer mode="side" [opened]="isDrawerOpen">
+    <!-- Drawer content goes here -->
+    <mat-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active"
+        >Page generator</a
+      >
+    </mat-list>
+
+    <mat-list>
+      <hr />
+      <a
+        mat-list-item
+        [routerLink]="'/landing-page/' + page.id"
+        class="pages-menu"
+        *ngFor="let page of pages$ | async"
+        >{{ page.title }}</a
+      >
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- Content area goes here -->
+    <button mat-icon-button (click)="toggleDrawer()">
+      <mat-icon>{{ isDrawerOpen ? "chevron_left" : "chevron_right" }}</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

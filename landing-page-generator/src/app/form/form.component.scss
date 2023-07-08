@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   font-family: "Roboto";
+  color: #000;
 }
 .container {
   display: flex;
@@ -13,7 +14,7 @@
 
   &__card {
     width: 37.5rem;
-    background-color: #e8e4c9;
+    background-color: #e0e0e0;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -47,7 +48,11 @@
     border-radius: 4px;
     font-family: "Roboto";
     font-weight: 400;
-    background-color: #3eb925 !important;
+    background-color: #007bff !important;
+
+    &:hover {
+      background-color: #0056b3 !important;
+    }
   }
 }
 

@@ -6,7 +6,14 @@ import {
   CollectionReference,
   DocumentReference,
 } from '@angular/fire/firestore';
-import { Component, Inject, OnInit, inject } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  OnInit,
+  Output,
+  inject,
+} from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -14,6 +21,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { SharedDataService } from '../shared-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -22,11 +31,12 @@ import { Observable } from 'rxjs';
 })
 export class FormComponent implements OnInit {
   submitBtnStatus = true;
+  btnPressed = false;
   form!: FormGroup;
   pages$: Observable<pageDataProfile[]>;
   pagesCollection: CollectionReference;
 
-  constructor(private firestore: Firestore) {
+  constructor(private firestore: Firestore, private router: Router) {
     this.pagesCollection = collection(this.firestore, 'pages');
     this.pages$ = collectionData(this.pagesCollection) as Observable<
       pageDataProfile[]
@@ -68,12 +78,15 @@ export class FormComponent implements OnInit {
         content,
         pictureLink,
         websiteLink,
-      }).then((documentReference: DocumentReference) => {});
+      }).then((documentReference: DocumentReference) => {
+        this.router.navigate(['/landing-page', documentReference.id]);
+      });
     }
   }
 }
 
 export interface pageDataProfile {
+  id: string;
   title: string;
   content: string;
   pictureLink: string;
