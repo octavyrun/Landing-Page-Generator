@@ -69,6 +69,7 @@
         mat-flat-button
         class="container__form-item container__submit-btn"
         (click)="generateWebpage()"
+        [disabled]="submitBtnStatus"
       >
         Generate web page
       </button>
