@@ -55,7 +55,6 @@ export class FormComponent implements OnInit {
     });
   }
   generateWebpage(): void {
-    console.log(this.form.value);
     const title = this.form.get('title')?.value;
     const content = this.form.get('content')?.value;
     const pictureLink = this.form.get('pictureLink')?.value;

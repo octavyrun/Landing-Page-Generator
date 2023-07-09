@@ -21,10 +21,8 @@ export class LandingPageComponent implements OnInit {
       const pageSnapshot = await getDoc(pageRef);
       if (pageSnapshot.exists()) {
         this.pageData = pageSnapshot.data() as pageDataProfile;
-        console.log(this.pageData);
       } else {
-        // Handle case when the document does not exist
-        // For example, display an error message or redirect to a different page
+        throw new Error('Document does not exist');
       }
     });
   }
